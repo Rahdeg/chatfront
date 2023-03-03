@@ -6,9 +6,9 @@ import { useState } from 'react'
 
 const Home: NextPage = () => {
   const [prompt, setPrompt] = useState('')
-  const [response, setResponse] = useState < string | null> (null);
+  const [response, setResponse] = useState < any | null> (null);
   const handleClick = async ()=>{
-    await axios.post('https://chat-ap.herokuapp.com/',{prompt})
+    await axios.post('https://chat-ap.herokuapp.com/api/v1/chat',{prompt})
     .then((res)=>{setResponse(res.data)})
     .catch((err)=>{console.log(err)})
   };
