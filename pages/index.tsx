@@ -8,7 +8,7 @@ const Home: NextPage = () => {
   const [prompt, setPrompt] = useState('')
   const [response, setResponse] = useState < string | null> (null);
   const handleClick = async ()=>{
-    await axios.post('http://localhost:8080/api/v1/chat',{prompt})
+    await axios.post('https://chat-ap.herokuapp.com/',{prompt})
     .then((res)=>{setResponse(res.data)})
     .catch((err)=>{console.log(err)})
   };
